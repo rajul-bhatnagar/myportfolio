@@ -394,7 +394,7 @@ function App() {
     <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul className="navbar-nav">
         <li className="nav-item">
-          <NavLink className="nav-link text-info" to="/about">About</NavLink>
+          <NavLink className="nav-link text-info" to="/myportfolio">About</NavLink>
         </li>
         <li className="nav-item">
           <NavLink className="nav-link text-info" to="/skills">Skills</NavLink>
@@ -416,8 +416,8 @@ function App() {
       {/* Add Suspense for fallback loading */}
       <Suspense fallback={<div className="text-center mt-5">Loading...</div>}>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          {/* <Route path="/" element={<Home />} /> */}
+          <Route path="/myportfolio" element={<About />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/experience" element={<WorkExperience />} />
           <Route path="/projects" element={<Projects />} />
