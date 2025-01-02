@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Suspense, lazy } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -8,7 +8,7 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import "animate.css";
 import "./App.scss";
-import profilePic from "../src/images/ProfilePic.jpeg";
+
 import {
   FaReact,
   FaHtml5,
@@ -19,6 +19,7 @@ import {
 } from "react-icons/fa";
 import { FaPhone, FaRegFileAlt, FaHeartbeat } from "react-icons/fa";
 
+const About = lazy(() => import("../src/components/About.js"));
 const Home = () => (
   <div className="container text-center my-5">
     <h1 className="animate__animated animate__fadeIn text-light">
@@ -34,45 +35,7 @@ const Home = () => (
   </div>
 );
 
-const About = () => (
-  <div className="container my-5 bg-dark text-light p-5 rounded-3 shadow-lg">
-    <div className="row align-items-center">
-      <div className="col-md-6">
-        <h2 className="animate__animated animate__slideInLeft text-warning mb-4">
-          About Me
-        </h2>
-        <p className="animate__animated animate__fadeInUp text-light mb-4">
-          I am a passionate and proactive software engineer with a strong
-          foundation in Object-Oriented Programming (OOP). I specialize in
-          designing and building robust, scalable solutions using technologies
-          such as C++, C#, ASP.NET MVC, ASP.NET Core, and Entity Framework. My
-          focus is on writing clean, efficient code that can handle complex
-          challenges, particularly in optimizing CRUD operations and
-          implementing secure authentication protocols like JWT.
-        </p>
-        <p className="animate__animated animate__fadeInUp text-light mb-4">
-          With a keen interest in developing web applications, I am constantly
-          honing my skills to build high-performance systems. I am also adept at
-          ensuring seamless integration between front-end and back-end
-          technologies to deliver intuitive user experiences. My goal is to
-          leverage my technical expertise and creativity to solve real-world
-          problems and contribute to innovative projects.
-        </p>
-      </div>
-      <div className="col-md-6 d-flex justify-content-center align-items-center">
-        <img
-          src={profilePic}
-          alt="Profile"
-          className="img-fluid rounded-circle shadow-lg"
-          style={{ maxWidth: "300px", border: "4px solid #ff4500" }}
-        />
-      </div>
-    </div>
-    <div className="mt-4 text-center">
-      <h4 className="text-warning">Let's Build Something Amazing Together!</h4>
-    </div>
-  </div>
-);
+
 
 const Skills = () => (
   <div className="container my-5 bg-dark p-5 rounded-3">
@@ -505,55 +468,57 @@ const Contact = () => (
 function App() {
   return (
     <Router>
-      <div className="App bg-dark text-light">
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-          <div className="container">
-            <NavLink className="navbar-brand text-warning" to="/">
-              Rajul Bhatnagar
-            </NavLink>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
-              <ul className="navbar-nav ms-auto">
-                <li className="nav-item">
-                  <NavLink className="nav-link text-info" to="/about">
-                    About
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink className="nav-link text-info" to="/skills">
-                    Skills
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink className="nav-link text-info" to="/experience">
-                    Work Experience
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink className="nav-link text-info" to="/projects">
-                    Projects
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink className="nav-link text-info" to="/contact">
-                    Contact
-                  </NavLink>
-                </li>
-              </ul>
-            </div>
+    <div className="App bg-dark text-light">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div className="container">
+          <NavLink className="navbar-brand text-warning" to="/">
+            Rajul Bhatnagar
+          </NavLink>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item">
+                <NavLink className="nav-link text-info" to="/about">
+                  About
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link text-info" to="/skills">
+                  Skills
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link text-info" to="/experience">
+                  Work Experience
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link text-info" to="/projects">
+                  Projects
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link text-info" to="/contact">
+                  Contact
+                </NavLink>
+              </li>
+            </ul>
           </div>
-        </nav>
+        </div>
+      </nav>
 
+      {/* Add Suspense for fallback loading */}
+      <Suspense fallback={<div className="text-center mt-5">Loading...</div>}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -562,8 +527,9 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-      </div>
-    </Router>
+      </Suspense>
+    </div>
+  </Router>
   );
 }
 
