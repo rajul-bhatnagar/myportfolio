@@ -20,101 +20,88 @@ import {
 import { FaPhone, FaRegFileAlt, FaHeartbeat } from "react-icons/fa";
 
 const About = lazy(() => import("../src/components/About.js"));
-const Home = () => (
-  <div className="container text-center my-5">
-    <h1 className="animate__animated animate__fadeIn text-light">
-      Welcome to My Portfolio
-    </h1>
-    <p className="animate__animated animate__fadeInUp text-light">
-      Hi, I'm Rajul Bhatnagar, a software engineer specializing in full-stack
-      development.
-    </p>
-    <p className="animate__animated animate__fadeInUp text-light">
-      Explore my skills, projects, and experience!
-    </p>
-  </div>
-);
-
-
 
 const skillsData = [
   {
     icon: <FaReact size={50} color="#61dafb" />,
     title: "C++",
-    description: "Object-Oriented Programming language used in systems and application development.",
+    description:
+      "Object-Oriented Programming language used in systems and application development.",
     progress: 85,
-    progressColor: "bg-info"
+    progressColor: "bg-info",
   },
   {
     icon: <FaReact size={50} color="#61dafb" />,
     title: "C#",
-    description: "Modern, object-oriented programming language used in backend development.",
+    description:
+      "Modern, object-oriented programming language used in backend development.",
     progress: 90,
-    progressColor: "bg-info"
+    progressColor: "bg-info",
   },
   {
     icon: <FaReact size={50} color="#61dafb" />,
     title: ".NET Core",
-    description: "Cross-platform backend framework for building scalable applications.",
+    description:
+      "Cross-platform backend framework for building scalable applications.",
     progress: 80,
-    progressColor: "bg-info"
+    progressColor: "bg-info",
   },
   {
     icon: <FaReact size={50} color="#61dafb" />,
     title: "ASP.NET MVC",
     description: "Framework for building dynamic web applications in .NET.",
     progress: 75,
-    progressColor: "bg-info"
+    progressColor: "bg-info",
   },
   {
     icon: <FaReact size={50} color="#61dafb" />,
     title: "React.js",
     description: "Frontend library for building user interfaces.",
     progress: 90,
-    progressColor: "bg-info"
+    progressColor: "bg-info",
   },
   {
     icon: <FaHtml5 size={50} color="#e34f26" />,
     title: "JavaScript",
     description: "Programming language for interactive web pages.",
     progress: 85,
-    progressColor: "bg-danger"
+    progressColor: "bg-danger",
   },
   {
     icon: <FaHtml5 size={50} color="#e34f26" />,
     title: "HTML5",
     description: "Markup language for creating web pages.",
     progress: 95,
-    progressColor: "bg-danger"
+    progressColor: "bg-danger",
   },
   {
     icon: <FaCss3Alt size={50} color="#1572b6" />,
     title: "CSS3",
     description: "Stylesheets for designing web pages.",
     progress: 90,
-    progressColor: "bg-primary"
+    progressColor: "bg-primary",
   },
   {
     icon: <FaNodeJs size={50} color="#339933" />,
     title: "Node.js",
     description: "Backend JavaScript runtime environment.",
     progress: 80,
-    progressColor: "bg-success"
+    progressColor: "bg-success",
   },
   {
     icon: <FaDatabase size={50} color="#4e73df" />,
     title: "SQL & PostgreSQL",
     description: "Relational databases and SQL queries.",
     progress: 75,
-    progressColor: "bg-primary"
+    progressColor: "bg-primary",
   },
   {
     icon: <FaGitAlt size={50} color="#f14e32" />,
     title: "Git",
     description: "Version control system for tracking.",
     progress: 90,
-    progressColor: "bg-danger"
-  }
+    progressColor: "bg-danger",
+  },
 ];
 
 const SkillCard = ({ icon, title, description, progress, progressColor }) => (
@@ -125,7 +112,10 @@ const SkillCard = ({ icon, title, description, progress, progressColor }) => (
         <h4 className="card-title mt-3">{title}</h4>
         <p className="card-text">{description}</p>
         <div className="progress" style={{ height: "8px" }}>
-          <div className={`progress-bar ${progressColor}`} style={{ width: `${progress}%` }}></div>
+          <div
+            className={`progress-bar ${progressColor}`}
+            style={{ width: `${progress}%` }}
+          ></div>
         </div>
       </div>
     </div>
@@ -374,58 +364,69 @@ const Contact = () => (
 function App() {
   return (
     <Router>
-    <div className="App bg-dark text-light">
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div className="container">
-    <NavLink className="navbar-brand text-warning" to="/">
-      Rajul Bhatnagar
-    </NavLink>
-    <button
-      className="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul className="navbar-nav">
-        <li className="nav-item">
-          <NavLink className="nav-link text-info" to="/myportfolio">About</NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink className="nav-link text-info" to="/skills">Skills</NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink className="nav-link text-info" to="/experience">Work Experience</NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink className="nav-link text-info" to="/projects">Projects</NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink className="nav-link text-info" to="/contact">Contact</NavLink>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+      <div className="App bg-dark text-light">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+          <div className="container">
+            <NavLink className="navbar-brand text-warning" to="/">
+              Rajul Bhatnagar
+            </NavLink>
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div
+              className="collapse navbar-collapse justify-content-end"
+              id="navbarNav"
+            >
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                  <NavLink className="nav-link text-info" to="/myportfolio">
+                    About
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link text-info" to="/skills">
+                    Skills
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link text-info" to="/experience">
+                    Work Experience
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link text-info" to="/projects">
+                    Projects
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link text-info" to="/contact">
+                    Contact
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
 
-      {/* Add Suspense for fallback loading */}
-      <Suspense fallback={<div className="text-center mt-5">Loading...</div>}>
-        <Routes>
-          {/* <Route path="/" element={<Home />} /> */}
-          <Route path="/myportfolio" element={<About />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/experience" element={<WorkExperience />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </Suspense>
-    </div>
-  </Router>
+        <Suspense fallback={<div className="text-center mt-5">Loading...</div>}>
+          <Routes>
+            <Route path="/myportfolio" element={<About />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/experience" element={<WorkExperience />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </Suspense>
+      </div>
+    </Router>
   );
 }
 

@@ -6,21 +6,24 @@ const About = () => (
       <div className="col-md-6">
         <h2 className="text-warning mb-4">About Me</h2>
         <p className="text-light mb-4">
-          I am a passionate and proactive software engineer with a strong
-          foundation in Object-Oriented Programming (OOP). I specialize in
-          designing and building robust, scalable solutions using technologies
-          such as C++, C#, ASP.NET MVC, ASP.NET Core, and Entity Framework. My
-          focus is on writing clean, efficient code that can handle complex
-          challenges, particularly in optimizing CRUD operations and
-          implementing secure authentication protocols like JWT.
+          I am a results-driven and proactive software engineer with a solid
+          foundation in Object-Oriented Programming (OOP) and expertise in
+          developing robust, scalable, and efficient solutions. My technical
+          proficiency includes C++, C#, ASP.NET MVC, ASP.NET Core, Entity
+          Framework, React, and JavaScript. I am passionate about writing clean,
+          maintainable code that effectively addresses complex challenges, such
+          as optimizing CRUD operations and implementing secure authentication
+          protocols using JWT.
         </p>
         <p className="text-light mb-4">
-          With a keen interest in developing web applications, I am constantly
-          honing my skills to build high-performance systems. I am also adept at
-          ensuring seamless integration between front-end and back-end
-          technologies to deliver intuitive user experiences. My goal is to
-          leverage my technical expertise and creativity to solve real-world
-          problems and contribute to innovative projects.
+          With a strong focus on full-stack web application development, I
+          continuously enhance my skills to deliver high-performance,
+          user-centric systems. I excel in integrating front-end technologies
+          like React and JavaScript with back-end frameworks to create seamless
+          and intuitive user experiences. My goal is to leverage my technical
+          acumen, creativity, and collaborative mindset to drive innovation,
+          solve real-world problems, and contribute to impactful software
+          projects.
         </p>
       </div>
       <div className="col-md-6 d-flex justify-content-center align-items-center">
